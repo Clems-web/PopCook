@@ -1,5 +1,5 @@
 <div id="formContainer">
-    <form id="formConnect" action="./connection.php" method="POST">
+    <form id="formConnect" action="./connexion.php" method="POST">
         <div class="inputBlock">
             <input type="text" id="inputUsername" name="username" placeholder="Username">
         </div>
@@ -8,4 +8,5 @@
         </div>
         <button id="buttonConnect" type="submit">Se connecter</button>
     </form>
+    <div id="subscriptionDiv">Vous n'avez pas de compte ? <a href="?controller=registration">S'inscrire</a></div>
 </div>

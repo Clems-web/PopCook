@@ -29,7 +29,7 @@ class UserManager {
         if($result) {
             $user_data = $request->fetch();
             if($user_data) {
-                $user = new User($user_data['id'], $user_data['name'], $user_data['password'], $user_data['mail'], $user_data['role_fk']);
+                $user = new User($user_data['id'], $user_data['username'], $user_data['password'], $user_data['mail'], $user_data['role_fk']);
             }
         }
         return $user;

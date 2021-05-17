@@ -30,10 +30,16 @@ if (isset($_GET['controller'])) {
             $controller = new UserController();
             $controller->userConnect();
             break;
+
+        case 'registration' :
+            $controller = new UserController();
+            $controller->userRegister();
+            break;
     }
 }
 else {
     $controller = new HomeController();
     $controller->homePage();
+
 }
 
