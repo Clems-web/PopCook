@@ -1,0 +1,85 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 62.5%;
+    font-family: 'Roboto', sans-serif;
+}
+
+#container {
+    width: 100%;
+    height: 100vh;
+    background-color: blanchedalmond;
+}
+
+#navbar {
+    width: 100%;
+    height: 10rem;
+    background-color: #9E2A4C;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    box-shadow: rgba(0, 0, 0, 0.35) 0 5px 15px;
+}
+
+#navbar ul {
+    width: 100%;
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    color: blanchedalmond;
+    font-size: 4rem;
+}
+
+li i {
+    font-size: 2.5rem;
+    margin-right: 1rem;
+}
+
+a {
+    text-decoration: none;
+    font-size: 2.5rem;
+    color: blanchedalmond;
+}
+
+#formContainer {
+    width: 40%;
+    height: 50vh;
+    margin-left: 30%;
+    margin-top: 10rem;
+    border: 3px solid #9E2A4C;
+    border-radius: 15px;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#formConnect {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.inputBlock {
+    font-size: 4rem;
+    margin-bottom: 2rem;
+}
+#inputUsername, #inputUserPass {
+    border: 2px solid #9E2A4C;
+    border-radius: 16px;
+    padding-left: 0.5rem;
+    width: 100%;
+}
+#buttonConnect {
+    width: 100%;
+    font-size: 2.5rem;
+    margin-top: 1rem;
+    border: 1px solid #9E2A4C;
+    border-radius: 16px;
+    background-color: #9E2A4C;
+    color: blanchedalmond;
+}
