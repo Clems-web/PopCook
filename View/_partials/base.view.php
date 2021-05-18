@@ -19,7 +19,7 @@
                 <li id="liAccount">
                     <?php
                         if (isset($_SESSION['user'])) {
-                            echo '<i class="fas fa-user"></i><a href="#">'.$_SESSION['user']->getUsername().'</a>';
+                            echo '<i class="fas fa-user"></i><a href="?controller=profile">'.$_SESSION['user']->getUsername().'</a>';
                             echo '<div id="subMenu"><a href="./deconnexion.php">Se déconnecter</a></div>';
                         }
                         else {
@@ -32,10 +32,5 @@
 
         <?= $html ?>
     </div>
-<?php
-echo "<pre>";
-print_r($_SESSION['user']);
-echo "</pre>";
-?>
 </body>
 </html>

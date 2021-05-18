@@ -8,7 +8,7 @@
 
 #container {
     width: 100%;
-    height: 100vh;
+    height: auto;
     background-color: blanchedalmond;
 }
 
@@ -105,4 +105,23 @@ a {
 #liAccount #subMenu a {
     margin-left: 1rem;
     font-size: 1.5rem;
+}
+
+#profileContainer {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    border: 1px solid black;
+}
+#profileSettings {
+    width: 20%;
+    border: 1px solid red;
+}
+#profileContent {
+    width: 80%;
+    border: 1px solid blue;
+}
+input:focus {
+    outline: none;
 }

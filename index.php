@@ -35,6 +35,12 @@ if (isset($_GET['controller'])) {
             $controller = new UserController();
             $controller->userRegister();
             break;
+
+        case 'profile' :
+            $controller = new UserController();
+            $controller->userProfile();
+            break;
+
     }
 }
 else {

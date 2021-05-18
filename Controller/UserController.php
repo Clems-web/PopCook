@@ -12,4 +12,7 @@ class UserController {
         $render = new Render('register', 'PopCook registration');
     }
 
+    public function userProfile() {
+        $render = new Render('profile', 'Your profile');
+    }
 }
