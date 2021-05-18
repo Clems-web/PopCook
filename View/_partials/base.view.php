@@ -31,6 +31,12 @@
         </div>
 
         <?= $html ?>
+        <div id="footer">
+            <ul>
+                <li>Mentions légales</li>
+                <li>Contact</li>
+            </ul>
+        </div>
     </div>
 </body>
 </html>

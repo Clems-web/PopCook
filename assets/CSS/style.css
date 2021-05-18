@@ -13,7 +13,7 @@
     background-color: blanchedalmond;
 }
 
-#navbar {
+#navbar, #footer {
     width: 100%;
     height: 10rem;
     background-color: #9E2A4C;
@@ -23,7 +23,7 @@
     box-shadow: rgba(0, 0, 0, 0.35) 0 5px 15px;
 }
 
-#navbar ul {
+#navbar ul, #footer ul {
     width: 100%;
     list-style: none;
     display: flex;
@@ -34,7 +34,9 @@
     text-shadow: #474747 3px 5px 2px;
     font-size: 4rem;
 }
-
+#footer ul {
+    font-size: 2rem;
+}
 li i {
     font-size: 2.5rem;
     margin-right: 1rem;
@@ -129,7 +131,7 @@ a {
     box-shadow: inset 0 0 10px 1px rgba(158,42,76,0.32);
 }
 
-}
+
 input:focus {
     outline: none;
 }
