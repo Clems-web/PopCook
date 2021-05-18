@@ -13,14 +13,29 @@
     <div id="container">
         <div id="navbar">
             <ul>
-                <li><i class="fas fa-home"></i>Accueil</li>
+                <li><i class="fas fa-home"></i><a href="./index.php">Accueil</a></li>
                 <li><i class="fas fa-book"></i>Recette</li>
                 <li><i class="fas fa-list"></i>Catégories</li>
-                <li><i class="fas fa-user"></i><a href="?controller=connexion">Connexion</a> </li>
+                <li id="liAccount">
+                    <?php
+                        if (isset($_SESSION['user'])) {
+                            echo '<i class="fas fa-user"></i><a href="#">'.$_SESSION['user']->getUsername().'</a>';
+                            echo '<div id="subMenu"><a href="./deconnexion.php">Se déconnecter</a></div>';
+                        }
+                        else {
+                            echo '<i class="fas fa-user"></i><a href="?controller=connexion">Connexion</a>';
+                        }
+                    ?>
+                </li>
             </ul>
         </div>
 
         <?= $html ?>
     </div>
+<?php
+echo "<pre>";
+print_r($_SESSION['user']);
+echo "</pre>";
+?>
 </body>
 </html>
