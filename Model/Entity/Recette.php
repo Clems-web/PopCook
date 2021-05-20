@@ -6,7 +6,8 @@ class Recette {
 
     private ?int $id;
     private ?string $title;
-    private ?string $content;
+    private ?string $ingredient;
+    private ?string $preparation;
     private ?string $category;
     private ?int $user_fk;
 
@@ -14,14 +15,16 @@ class Recette {
      * Recette constructor.
      * @param int|null $id
      * @param string $title
-     * @param string $content
+     * @param string $ingredient
+     * @param string $preparation
      * @param string $category
      * @param int|null $user_fk
      */
-    public function __construct(?int $id, string $title ,string $content, string $category, ?int $user_fk) {
+    public function __construct(?int $id, string $title ,string $ingredient,string $preparation, string $category, ?int $user_fk) {
         $this->id = $id;
         $this->title = $title;
-        $this->content = $content;
+        $this->ingredient = $ingredient;
+        $this->preparation = $preparation;
         $this->category = $category;
         $this->user_fk = $user_fk;
     }
@@ -57,21 +60,36 @@ class Recette {
         $this->title = $title;
     }
 
+    /**
+     * @return string|null
+     */
+    public function getIngredient(): ?string
+    {
+        return $this->ingredient;
+    }
+
+    /**
+     * @param string|null $ingredient
+     */
+    public function setIngredient(?string $ingredient): void
+    {
+        $this->ingredient = $ingredient;
+    }
 
     /**
      * @return string|null
      */
-    public function getContent(): ?string
+    public function getPreparation(): ?string
     {
-        return $this->content;
+        return $this->preparation;
     }
 
     /**
-     * @param string|null $content
+     * @param string|null $preparation
      */
-    public function setContent(?string $content): void
+    public function setPreparation(?string $preparation): void
     {
-        $this->content = $content;
+        $this->preparation = $preparation;
     }
 
     /**

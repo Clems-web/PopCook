@@ -1,11 +1,3 @@
-<?php
-require_once $_SERVER['DOCUMENT_ROOT'] . '/Model/DB.php';
-require_once $_SERVER['DOCUMENT_ROOT'] . '/Model/Entity/User.php';
-require_once $_SERVER['DOCUMENT_ROOT'] . '/Model/Entity/Recette.php';
-require_once $_SERVER['DOCUMENT_ROOT'] . '/Model/Manager/RecetteManager.php';
-
-?>
-
 <div id="profileContainer">
     <div id="profileSettings">
         <ul>
@@ -15,13 +7,26 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/Model/Manager/RecetteManager.php';
         </ul>
     </div>
     <div id="profileContent">
+        <div id="addRecipe">
+            <a href="?controller=addArticle">Publier une nouvelle recette</a>
+        </div>
+        <h2>Vos articles :</h2>
         <?php
         $recette = new RecetteManager();
         $recetteAuthor = $recette->getByAuthor($_SESSION['user']);
         foreach ($recetteAuthor as $recipe) {?>
             <div class="recettes">
-                <span><?= $recipe->getTitle();?></span>
-                <p><?= $recipe->getContent();?></p>
+                <span class="spanTitle"><?= $recipe->getTitle();?></span>
+                <p>
+                    <span class="spanIngredient">Ingrédient :</span>
+                    <br>
+                    <?= nl2br($recipe->getIngredient());?>
+                </p>
+                <p>
+                    <span class="spanPreparation">Preparation :</span>
+                    <br>
+                    <?= $recipe->getPreparation();?>
+                </p>
             </div>
         <?php
         }

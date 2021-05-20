@@ -15,7 +15,7 @@ class RecetteManager {
         if ($result) {
             $data = $request->fetchAll();
             foreach($data as $recipe_data) {
-                $recipe[] = new Recette($recipe_data['id'], $recipe_data['title'], $recipe_data['content'], $recipe_data['category'],$recipe_data['user_fk']);
+                $recipe[] = new Recette($recipe_data['id'], $recipe_data['title'], $recipe_data['ingredient'], $recipe_data['preparation'], $recipe_data['category'],$recipe_data['user_fk']);
             }
         }
         return $recipe;
@@ -30,7 +30,7 @@ class RecetteManager {
         if($result) {
             $recipe_data = $request->fetch();
             if($recipe_data) {
-                $recipe = new Recette($recipe_data['id'], $recipe_data['title'], $recipe_data['content'], $recipe_data['category'],$recipe_data['user_fk']);
+                $recipe = new Recette($recipe_data['id'], $recipe_data['title'], $recipe_data['ingredient'], $recipe_data['preparation'], $recipe_data['category'],$recipe_data['user_fk']);
             }
         }
         return $recipe;
@@ -49,7 +49,7 @@ class RecetteManager {
             $data = $request->fetchAll();
             if ($data) {
                 foreach ($data as $recipe_data) {
-                    $recipe[] = new Recette($recipe_data['id'], $recipe_data['title'], $recipe_data['content'], $recipe_data['category'],$recipe_data['user_fk']);
+                    $recipe[] = new Recette($recipe_data['id'], $recipe_data['title'], $recipe_data['ingredient'], $recipe_data['preparation'], $recipe_data['category'],$recipe_data['user_fk']);
                 }
             }
         }
@@ -60,11 +60,12 @@ class RecetteManager {
     public function saveRecipe(Recette $recipe) {
         if ($recipe->getId() === 0 ||$recipe->getId() == null) {
             $request = DB::getInstance()->prepare("
-        INSERT INTO recette(title, content, category,user_fk) VALUES (:title, :content, :category,:user_fk)
+        INSERT INTO recette(title, ingredient, preparation, category,user_fk) VALUES (:title, :ingredient, :preparation, :category,:user_fk)
         ");
 
             $request->bindValue(':title', $recipe->getTitle());
-            $request->bindValue(':content', $recipe->getContent());
+            $request->bindValue(':ingredient', $recipe->getIngredient());
+            $request->bindValue(':preparation', $recipe->getPreparation());
             $request->bindValue(':category', $recipe->getCategory());
             $request->bindValue(':user_fk', $recipe->getUserFk());
 
@@ -78,11 +79,12 @@ class RecetteManager {
         // Else it's an update of the article
         else {
             $request = DB::getInstance()->prepare("
-            UPDATE recette SET title = :title, content = :content, category = :category,user_fk = :user_fk WHERE id = :id
+            UPDATE recette SET title = :title, ingredient = :ingredient, :preparation = preparation, category = :category,user_fk = :user_fk WHERE id = :id
             ");
 
             $request->bindValue(':title', $recipe->getTitle());
-            $request->bindValue(':content', $recipe->getContent());
+            $request->bindValue(':ingredient', $recipe->getIngredient());
+            $request->bindValue(':preparation', $recipe->getPreparation());
             $request->bindValue(':category', $recipe->getCategory());
             $request->bindValue(':user_fk', $recipe->getUserFk());
             $request->bindValue(':id', $recipe->getId());
@@ -97,7 +99,7 @@ class RecetteManager {
     }
 
     // Deleted article
-    public function delArticle(Recette $recipe) {
+    public function delRecipe(Recette $recipe) {
         $request = DB::getInstance()->prepare("
         DELETE FROM recette WHERE id = :id;
         ");

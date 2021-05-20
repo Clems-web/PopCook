@@ -15,4 +15,5 @@ class UserController {
     public function userProfile() {
         $render = new Render('profile', 'Your profile');
     }
+
 }

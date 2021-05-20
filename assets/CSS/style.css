@@ -74,6 +74,10 @@ a {
     font-size: 4rem;
     margin-bottom: 2rem;
 }
+.inputBlock input {
+    padding-left: 1.5rem;
+    font-size: 2rem;
+}
 #inputUsername, #inputUserPass, #inputUserMail {
     border: 2px solid #9E2A4C;
     border-radius: 16px;
@@ -168,13 +172,53 @@ input:focus {
     box-shadow: inset 0 0 10px 1px rgba(158,42,76,0.32);
 }
 
-.recettes span {
+.recettes .spanTitle {
     display: block;
     font-size: 3rem;
     padding-top: 0.5rem;
+    color: #091921;
 }
 .recettes p {
     font-size: 1.5rem;
     margin-top: 2rem;
     padding-bottom: 1.5rem;
 }
+
+#profileContent h2 , #profileContent #addRecipe {
+    font-size: 2rem;
+    margin-top: 2rem;
+    margin-left: 4rem;
+    color: #9E2A4C;
+}
+#addRecipe {
+    width: 26%;
+    background-color: white;
+    border-radius: 5px;
+    text-align: center;
+    box-shadow: inset 0 0 10px 1px rgba(158,42,76,0.32);
+}
+
+#addRecipe a {
+    color: #9E2A4C;
+    font-weight: bolder;
+}
+
+.spanIngredient, .spanPreparation {
+    font-size: 2rem;
+}
+
+#formAddRecipe {
+    width: 80%;
+    margin-left: 10%;
+}
+
+textarea, select {
+    padding-left: 1.5rem;
+    font-size: 2rem;
+}
+textarea {
+    padding-top: 1rem;
+}
+
+
+

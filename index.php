@@ -41,6 +41,9 @@ if (isset($_GET['controller'])) {
             $controller->userProfile();
             break;
 
+        case 'addArticle' :
+            $controller = new RecetteController();
+            $controller->addRecipe();
     }
 }
 else {
