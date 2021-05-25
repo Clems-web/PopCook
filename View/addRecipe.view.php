@@ -4,7 +4,8 @@
         <select name="recipeCategory" id="categorySelect" form="formAddRecipe" placeholder="">
             <option value="Film">Film</option>
             <option value="Série">Série</option>
-            <option value="Manga">Manga</option>
+            <option value="Manga/Anime">Manga/Anime</option>
+            <option value="Roman/BD/Comics">Roman/BD/Comics</option>
         </select>
     </div>
     <div class="inputBlock">

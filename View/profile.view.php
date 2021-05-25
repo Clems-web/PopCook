@@ -1,9 +1,7 @@
 <div id="profileContainer">
     <div id="profileSettings">
         <ul>
-            <li>Change username</li>
-            <li>Change password</li>
-            <li>Change mail</li>
+            <li><a href="?controller=updateUser">Modifier mes informations</a></li>
         </ul>
     </div>
     <div id="profileContent">

@@ -16,4 +16,8 @@ class UserController {
         $render = new Render('profile', 'Your profile');
     }
 
+    public function userUpdate() {
+        $render = new Render('updateUser', 'Modifiations de vos informations');
+    }
+
 }

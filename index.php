@@ -44,6 +44,12 @@ if (isset($_GET['controller'])) {
         case 'addArticle' :
             $controller = new RecetteController();
             $controller->addRecipe();
+            break;
+
+        case 'updateUser' :
+            $controller = new UserController();
+            $controller->userUpdate();
+            break;
     }
 }
 else {

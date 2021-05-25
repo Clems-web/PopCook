@@ -22,7 +22,9 @@
     justify-content: space-evenly;
     box-shadow: rgba(0, 0, 0, 0.35) 0 5px 15px;
 }
-
+#footer {
+    margin-top: 10rem;
+}
 #navbar ul, #footer ul {
     width: 100%;
     list-style: none;
@@ -94,6 +96,10 @@ a {
     color: blanchedalmond;
 }
 
+#buttonSend {
+    font-size: 3rem;
+}
+
 #subscriptionDiv {
     color: black;
     font-size: 1.5rem;
@@ -153,12 +159,16 @@ input:focus {
     text-align: center;
     height: 4rem;
     width: 80%;
-    font-size: 2rem;
-    color: #9E2A4C;
     margin-bottom: 3rem;
     border-bottom: 4px solid white;
     border-radius: 8px;
     box-shadow: 0 15px 10px -15px #9E2A4C;
+
+}
+
+#profileSettings ul li a {
+    font-size: 1.7rem;
+    color: #9E2A4C;
     text-shadow: 0 0 11px rgba(158, 42, 76, 0.3);
 }
 
