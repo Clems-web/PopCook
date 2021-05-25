@@ -8,5 +8,9 @@ class RecetteController {
         $render = new Render('addRecipe', 'Ajouter une nouvelle recette');
     }
 
+    public function getRecipe() {
+        $render = new Render('recipe', 'Trouver une recette');
+    }
+
 
 }

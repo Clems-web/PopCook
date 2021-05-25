@@ -16,6 +16,9 @@ if (isset($_SESSION['user'], $_POST['new-username'], $_POST['old-user-mail'], $_
 
         $_SESSION['user'] = $user;
 
-        header('location: http://localhost:8000/?controller=profile');
+        header('Location: http://localhost:8000/?controller=profile');
+    }
+    else {
+        header('Location: http://localhost:8000/?controller=updateUser');
     }
 }

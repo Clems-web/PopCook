@@ -14,8 +14,8 @@
         <div id="navbar">
             <ul>
                 <li><i class="fas fa-home"></i><a href="./index.php">Accueil</a></li>
-                <li><i class="fas fa-book"></i>Recette</li>
-                <li><i class="fas fa-list"></i>Catégories</li>
+                <li><i class="fas fa-book"></i><a href="?controller=recette">Recette</a></li>
+                <li><i class="fas fa-utensils"></i>What's in my fridge ?</li>
                 <li id="liAccount">
                     <?php
                         if (isset($_SESSION['user'])) {
@@ -38,5 +38,6 @@
             </ul>
         </div>
     </div>
+    <script src="assets/JS/app.js"></script>
 </body>
 </html>

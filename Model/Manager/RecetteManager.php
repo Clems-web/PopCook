@@ -36,6 +36,20 @@ class RecetteManager {
         return $recipe;
     }
 
+    // Get recipe by Search
+    public function getBySearch(string $string){
+        $recipe = [];
+        $request = DB::getInstance()->prepare("SELECT * FROM recette WHERE title LIKE '%$string%'");
+        $result = $request->execute();
+        if($result) {
+            $recipe_data = $request->fetch();
+            if($recipe_data) {
+                $recipe[] = new Recette($recipe_data['id'], $recipe_data['title'], $recipe_data['ingredient'], $recipe_data['preparation'], $recipe_data['category'],$recipe_data['user_fk']);
+            }
+        }
+        return $recipe;
+    }
+
     // Get recipe by Object User->getId()
     public function getByAuthor(User $user) {
         $recipe = [];

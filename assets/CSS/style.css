@@ -188,6 +188,9 @@ input:focus {
     padding-top: 0.5rem;
     color: #091921;
 }
+.spanTitle {
+    font-size: 3rem;
+}
 .recettes p {
     font-size: 1.5rem;
     margin-top: 2rem;
@@ -228,6 +231,37 @@ textarea, select {
 }
 textarea {
     padding-top: 1rem;
+}
+
+#recipeContainer {
+    width: 80%;
+    height: 100vh;
+    margin-left: 10%;
+    margin-top: 10rem;
+    border: 1px solid black;
+    border-radius: 15px;
+    background-color: whitesmoke;
+    text-align: center;
+}
+
+#recipeContainer input {
+    width: 60%;
+    margin-top: 4rem;
+    font-size: 2rem;
+    padding-left: 2rem;
+    border-radius: 5px;
+}
+
+#recipeContainer button {
+    font-size: 2rem;
+}
+
+.recipe {
+    width: 80%;
+    margin-left: 10%;
+    margin-top: 4rem;
+    height: fit-content;
+    border: 1px solid blue;
 }
 
 
