@@ -12,8 +12,9 @@ if ($result) {
     $tab = [];
 
     foreach ($result as $recipe) {
-        $tab[] = ['title' => $recipe->getTitle(), 'ingredient' => $recipe->getIngredient(), 'preparation' => $recipe->getPreparation()];
+        $tab[] = ['title' => $recipe->getTitle(), 'ingredient' => nl2br($recipe->getIngredient()), 'preparation' => $recipe->getPreparation()];
     }
+
     echo json_encode($tab);
 }
 

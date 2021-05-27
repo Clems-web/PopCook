@@ -14,13 +14,17 @@ function getRecipe(){
     xhr.onload = function(){
         const result = JSON.parse(xhr.responseText);
             for (let recipe of result) {
-                console.log(result);
+
                 divRecipeContainer.innerHTML +=
                 `
                 <div class="recipe">
                   <h2 class="spanTitle">${recipe.title}</h2>
-                  <span class="spanIngredient">${recipe.ingredient}</span>
-                  <span class="spanPreparation">${recipe.preparation}</span>
+                  
+                  <span class="subTitle">Ingrédients :</span><br>
+                  <p class="paraIngredient">${recipe.ingredient}</p>
+                  
+                  <span class="subTitle">Préparation :</span><br>
+                  <p class="paraPreparation">${recipe.preparation}</p>
                 </div>
                 `
             }
