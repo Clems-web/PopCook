@@ -1,13 +1,11 @@
 <div id="profileContainer">
     <div id="profileSettings">
         <ul>
+            <li><a href="?controller=addArticle">Publier une nouvelle recette</a></li>
             <li><a href="?controller=updateUser">Modifier mes informations</a></li>
         </ul>
     </div>
     <div id="profileContent">
-        <div id="addRecipe">
-            <a href="?controller=addArticle">Publier une nouvelle recette</a>
-        </div>
         <h2>Vos articles :</h2>
         <?php
         $recette = new RecetteManager();
@@ -23,7 +21,7 @@
                 <p>
                     <span class="spanPreparation">Preparation :</span>
                     <br>
-                    <?= $recipe->getPreparation();?>
+                    <?= nl2br($recipe->getPreparation());?>
                 </p>
             </div>
         <?php

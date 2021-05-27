@@ -39,12 +39,14 @@ class RecetteManager {
     // Get recipe by Search
     public function getBySearch(string $string){
         $recipe = [];
-        $request = DB::getInstance()->prepare("SELECT * FROM recette WHERE title LIKE '%$string%'");
+        $request = DB::getInstance()->prepare("SELECT * FROM recette WHERE title LIKE '%$string%' OR ingredient LIKE '%$string%' OR preparation LIKE '%$string%'");
         $result = $request->execute();
         if($result) {
-            $recipe_data = $request->fetch();
+            $recipe_data = $request->fetchAll();
             if($recipe_data) {
-                $recipe[] = new Recette($recipe_data['id'], $recipe_data['title'], $recipe_data['ingredient'], $recipe_data['preparation'], $recipe_data['category'],$recipe_data['user_fk']);
+                foreach ($recipe_data as $recette) {
+                    $recipe[] = new Recette($recette['id'], $recette['title'], $recette['ingredient'], $recette['preparation'], $recette['category'],$recette['user_fk']);
+                }
             }
         }
         return $recipe;
