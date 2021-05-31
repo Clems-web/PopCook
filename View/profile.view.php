@@ -6,7 +6,7 @@
         </ul>
     </div>
     <div id="profileContent">
-        <h2>Vos articles :</h2>
+        <h2>Vos publications :</h2>
         <?php
         $recette = new RecetteManager();
         $recetteAuthor = $recette->getByAuthor($_SESSION['user']);
@@ -19,7 +19,7 @@
                     <?= nl2br($recipe->getIngredient());?>
                 </p>
                 <p>
-                    <span class="spanPreparation">Preparation :</span>
+                    <span class="spanPreparation">Préparation :</span>
                     <br>
                     <?= nl2br($recipe->getPreparation());?>
                 </p>

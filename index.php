@@ -55,6 +55,11 @@ if (isset($_GET['controller'])) {
             $controller = new RecetteController();
             $controller->getRecipe();
             break;
+
+        case 'composer' :
+            $controller = new RecetteController();
+            $controller->findRecipe();
+            break;
     }
 }
 else {

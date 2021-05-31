@@ -5,6 +5,7 @@
             <li><button class="buttonCategory">Série</button></li>
             <li><button class="buttonCategory">Manga/Anime</button></li>
             <li><button class="buttonCategory">Roman/Bande-dessinée/Comics</button></li>
+            <li><button class="buttonCategory">Jeu vidéo</button></li>
         </ul>
     </div>
     <div id="searchbarRecipe">

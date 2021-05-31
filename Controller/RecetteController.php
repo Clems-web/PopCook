@@ -12,5 +12,9 @@ class RecetteController {
         $render = new Render('recipe', 'Trouver une recette');
     }
 
+    public function findRecipe() {
+        $render = new Render('composeRecipe', "What's in my fridge");
+    }
+
 
 }

@@ -6,6 +6,7 @@
             <option value="Série">Série</option>
             <option value="Manga/Anime">Manga/Anime</option>
             <option value="Roman/BD/Comics">Roman/BD/Comics</option>
+            <option value="Jeu vidéo">Jeu vidéo</option>
         </select>
     </div>
     <div class="inputBlock">
