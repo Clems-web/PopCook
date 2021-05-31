@@ -4,8 +4,8 @@
 class DB {
     private static $dbInstance = null;
 
-    /*
-     * Static construct
+    /**
+     * DB constructor.
      */
     public function __construct(){
         $server = 'localhost';
@@ -35,7 +35,7 @@ class DB {
     }
 
     /**
-     * we prevent letting other developers clone the object
+     * Prevent other developers to clone object
      */
     public function __clone(){}
 }

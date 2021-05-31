@@ -12,5 +12,5 @@ if (isset($_POST['username'], $_POST['user-pass'])) {
 
     $_SESSION['user'] = $userConnected;
 
-    header('location: index.php');
+    header('Location: index.php');
 }

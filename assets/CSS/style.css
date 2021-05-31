@@ -173,7 +173,7 @@ input:focus {
     text-shadow: 0 0 11px rgba(158, 42, 76, 0.3);
 }
 
-.recettes {
+.recipes {
     width: 90%;
     margin-left: 5%;
     margin-top: 4rem;
@@ -188,13 +188,13 @@ input:focus {
     color: #9E2A4C;
 }
 
-.recettes .spanTitle {
+.recipes .spanTitle {
     display: block;
     font-size: 3rem;
     padding-top: 0.5rem;
 }
 
-.recettes p {
+.recipes p {
     font-size: 1.5rem;
     margin-top: 2rem;
     padding-bottom: 1.5rem;

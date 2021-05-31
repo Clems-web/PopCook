@@ -8,10 +8,10 @@
     <div id="profileContent">
         <h2>Vos publications :</h2>
         <?php
-        $recette = new RecetteManager();
-        $recetteAuthor = $recette->getByAuthor($_SESSION['user']);
-        foreach ($recetteAuthor as $recipe) {?>
-            <div class="recettes">
+        $recipe = new RecipeManager();
+        $recipeAuthor = $recipe->getByAuthor($_SESSION['user']);
+        foreach ($recipeAuthor as $recipe) {?>
+            <div class="recipes">
                 <span class="spanTitle"><?= $recipe->getTitle();?></span>
                 <p>
                     <span class="spanIngredient">Ingrédient :</span>

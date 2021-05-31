@@ -9,10 +9,10 @@
         <p>Fini la corvée du "Qu'est-ce qu'on mange ce soir ?" !</p>
     </div>
     <div id="searchbarWhat">
-        <form action="" id="formWhat">
+        <div id="formWhat">
             <input type="text" id="inputSearchWhat" placeholder="Ex : Nouilles, porc, oeuf, etc">
             <button type="submit" id="buttonSearchWhat"><i class="fas fa-search"></i></button>
-        </form>
+        </div>
     </div>
     <div id="recipes">
 

@@ -2,7 +2,7 @@
 
 
 
-class Recette {
+class Recipe {
 
     private ?int $id;
     private ?string $title;
@@ -12,7 +12,7 @@ class Recette {
     private ?int $user_fk;
 
     /**
-     * Recette constructor.
+     * Recipe constructor.
      * @param int|null $id
      * @param string $title
      * @param string $ingredient

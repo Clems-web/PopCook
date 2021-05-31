@@ -4,19 +4,19 @@
 require_once $_SERVER['DOCUMENT_ROOT'] . '/Model/DB.php';
 
 // Object
-require_once $_SERVER['DOCUMENT_ROOT'] . '/Model/Entity/Recette.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/Model/Entity/Recipe.php';
 require_once $_SERVER['DOCUMENT_ROOT'] . '/Model/Entity/User.php';
 require_once $_SERVER['DOCUMENT_ROOT'] . '/Model/Entity/Role.php';
 
 // Controller
 require_once $_SERVER['DOCUMENT_ROOT'] . '/Controller/RenderView.php';
 require_once $_SERVER['DOCUMENT_ROOT'] . '/Controller/HomeController.php';
-require_once $_SERVER['DOCUMENT_ROOT'] . '/Controller/RecetteController.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/Controller/RecipeController.php';
 require_once $_SERVER['DOCUMENT_ROOT'] . '/Controller/UserController.php';
 require_once $_SERVER['DOCUMENT_ROOT'] . '/Controller/RoleController.php';
 
 //Manager
-require_once $_SERVER['DOCUMENT_ROOT'] . '/Model/Manager/RecetteManager.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/Model/Manager/RecipeManager.php';
 require_once $_SERVER['DOCUMENT_ROOT'] . '/Model/Manager/UserManager.php';
 require_once $_SERVER['DOCUMENT_ROOT'] . '/Model/Manager/RoleManager.php';
 
@@ -42,7 +42,7 @@ if (isset($_GET['controller'])) {
             break;
 
         case 'addArticle' :
-            $controller = new RecetteController();
+            $controller = new RecipeController();
             $controller->addRecipe();
             break;
 
@@ -51,13 +51,13 @@ if (isset($_GET['controller'])) {
             $controller->userUpdate();
             break;
 
-        case 'recette' :
-            $controller = new RecetteController();
+        case 'recipe' :
+            $controller = new RecipeController();
             $controller->getRecipe();
             break;
 
         case 'composer' :
-            $controller = new RecetteController();
+            $controller = new RecipeController();
             $controller->findRecipe();
             break;
     }

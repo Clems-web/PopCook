@@ -2,8 +2,7 @@ let inputSearch = document.getElementById('inputSearch');
 let buttonSearch = document.getElementById('buttonSearch');
 let divRecipeContainer = document.getElementById('recipes');
 
-
-
+// Ajax request for input search in recipe page
 function getRecipe(){
 
     //Reset container innerHTML
@@ -17,8 +16,7 @@ function getRecipe(){
     xhr.onload = function(){
         const result = JSON.parse(xhr.responseText);
             for (let recipe of result) {
-                divRecipeContainer.innerHTML +=
-                `
+                divRecipeContainer.innerHTML += `
                 <div class="recipe">
                     <h2 class="spanTitle">${recipe.title}</h2>
                     <span class="subTitle">Ingrédients :</span><br>
@@ -28,7 +26,6 @@ function getRecipe(){
                 </div>
                 `
             }
-
     }
 
     // Send request
@@ -37,7 +34,7 @@ function getRecipe(){
 
 buttonSearch.addEventListener('click', getRecipe);
 
-
+// Ajax request for each buttons in recipe page
 let buttonsCategory = document.getElementsByClassName('buttonCategory');
 
 for (let x = 0; x < buttonsCategory.length; x++ ) {
@@ -49,14 +46,13 @@ for (let x = 0; x < buttonsCategory.length; x++ ) {
 
         // AJAX request to connect to server and manager.php
         const xhr = new XMLHttpRequest();
-        xhr.open("GET", "../../API/recipe.php?search="+buttonsCategory[x].innerHTML+"");
+        xhr.open("GET", "./API/recipe.php?search=" + buttonsCategory[x].innerHTML + "");
 
         // Exploit JSON and display them in HTML format
         xhr.onload = function(){
             const result = JSON.parse(xhr.responseText);
             for (let recipe of result) {
-                divRecipeContainer.innerHTML +=
-                    `
+                divRecipeContainer.innerHTML += `
                 <div class="recipe">
                     <h2 class="spanTitle">${recipe.title}</h2>
                     <span class="subTitle">Ingrédients :</span><br>
@@ -66,7 +62,6 @@ for (let x = 0; x < buttonsCategory.length; x++ ) {
                 </div>
                 `
             }
-
         }
 
         // Send request
