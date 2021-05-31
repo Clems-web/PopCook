@@ -248,15 +248,8 @@ textarea {
     text-align: center;
 }
 
-#recipeContainer input {
-    width: 60%;
-    margin-top: 4rem;
-    font-size: 2.5rem;
-}
-
-#recipeContainer button {
+.buttonCategory {
     font-size: 2rem;
-    padding: 1rem;
 }
 
 #searchbarRecipe {
@@ -270,11 +263,11 @@ textarea {
     padding: 1rem;
     margin-top: 4rem;
     background-color: white;
-    font-size: 3rem;
 }
 
 #inputSearch {
-    width: 95%;
+    width: 75%;
+    font-size: 2rem;
     border-bottom-left-radius: 20px;
     border-top-left-radius: 20px;
 }
