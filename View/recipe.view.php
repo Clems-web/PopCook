@@ -9,7 +9,7 @@
         </ul>
     </div>
     <div id="searchbarRecipe">
-        <input type="search" id="inputSearch" placeholder="ex : Naruto, Nouilles, etc">
+        <input type="search" id="inputSearch" placeholder="Ex : Ramen, Porc Tonkatsu, etc">
         <button type="submit" id="buttonSearch"><i class="fas fa-search"></i></button>
     </div>
     <div id="recipes">

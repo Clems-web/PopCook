@@ -128,20 +128,22 @@ a {
     flex-direction: row;
     background-color: white;
 }
+
 #profileSettings {
     width: 20%;
 }
+
 #profileContent {
     width: 80%;
     overflow-y: scroll;
 }
+
 #profileSettings, #profileContent {
     background-color: blanchedalmond;
     border: 4px solid white;
     border-radius: 25px;
     box-shadow: inset 0 0 10px 1px rgba(158,42,76,0.32);
 }
-
 
 input:focus {
     outline: none;
@@ -237,10 +239,9 @@ textarea {
 }
 
 #recipeContainer {
-    width: 80%;
+    width: 100%;
     min-height: 52vh;
     height: fit-content;
-    margin-left: 10%;
     margin-top: 5rem;
     border-radius: 15px;
     background-color: blanchedalmond;
@@ -250,13 +251,40 @@ textarea {
 #recipeContainer input {
     width: 60%;
     margin-top: 4rem;
-    font-size: 2rem;
-    padding-left: 1.5rem;
+    font-size: 2.5rem;
 }
 
 #recipeContainer button {
     font-size: 2rem;
     padding: 1rem;
+}
+
+#searchbarRecipe {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+#inputSearch, #buttonSearch {
+    border: 2px solid #9E2A4C;
+    padding: 1rem;
+    margin-top: 4rem;
+    background-color: white;
+    font-size: 3rem;
+}
+
+#inputSearch {
+    width: 95%;
+    border-bottom-left-radius: 20px;
+    border-top-left-radius: 20px;
+}
+
+#buttonSearch {
+    width: 5%;
+    font-size: 3rem;
+    border-bottom-right-radius: 20px;
+    border-top-right-radius: 20px;
+    border-left: none;
 }
 
 .recipe {
@@ -295,11 +323,6 @@ textarea {
     background-color: white;
 }
 
-#inputSearch {
-    border: 1px solid #9E2A4C;
-    border-radius: 5px;
-    padding: 1rem;
-}
 #containerWhat {
     width: 100%;
     height: 100vh;
@@ -357,7 +380,6 @@ textarea {
     width: 75%;
     border-bottom-left-radius: 20px;
     border-top-left-radius: 20px;
-
 }
 
 #formWhat #buttonSearchWhat {
