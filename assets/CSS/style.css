@@ -342,10 +342,30 @@ textarea {
     font-size: 5rem;
 }
 
-#formWhat #inputSearchWhat {
-    width: 60%;
+#formWhat {
+    display: flex;
+}
+
+#formWhat #buttonSearchWhat, #formWhat #inputSearchWhat {
     padding: 1rem;
     margin-top: 4rem;
+    background-color: white;
+    border: 2px solid #9E2A4C;
+}
+
+#formWhat #inputSearchWhat {
+    width: 75%;
+    border-bottom-left-radius: 20px;
+    border-top-left-radius: 20px;
+
+}
+
+#formWhat #buttonSearchWhat {
+    width: 5%;
+    border-bottom-right-radius: 20px;
+    border-top-right-radius: 20px;
+    border-left: none;
+    font-size: 3rem;
 }
 
 

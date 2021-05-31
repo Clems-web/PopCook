@@ -11,7 +11,7 @@
     <div id="searchbarWhat">
         <form action="" id="formWhat">
             <input type="text" id="inputSearchWhat" placeholder="Ex : Nouilles, porc, oeuf, etc">
-            <button type="submit" id="buttonSearch">loupe</button>
+            <button type="submit" id="buttonSearchWhat"><i class="fas fa-search"></i></button>
         </form>
     </div>
     <div id="recipes">
