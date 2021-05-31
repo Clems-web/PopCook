@@ -1,10 +1,10 @@
 <div id="recipeContainer">
     <div id="category">
         <ul>
-            <li><button>Film</button></li>
-            <li><button>Série</button></li>
-            <li><button>Manga/Anime</button></li>
-            <li><button>Roman/Bande-dessinée/Comics</button></li>
+            <li><button class="buttonCategory">Film</button></li>
+            <li><button class="buttonCategory">Série</button></li>
+            <li><button class="buttonCategory">Manga/Anime</button></li>
+            <li><button class="buttonCategory">Roman/Bande-dessinée/Comics</button></li>
         </ul>
     </div>
     <div id="searchbarRecipe">
