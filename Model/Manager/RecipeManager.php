@@ -98,6 +98,7 @@ class RecipeManager {
         return $recipe;
     }
 
+
     /**
      * Get Recipes by Author
      * @param User $user

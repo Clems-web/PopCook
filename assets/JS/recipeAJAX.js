@@ -10,7 +10,7 @@ function getRecipe(){
 
     // AJAX request to connect to server and manager.php
     const xhr = new XMLHttpRequest();
-    xhr.open("GET", "../../API/recipe.php?search="+inputSearch.value+"");
+    xhr.open("GET", "./API/recipe.php?search=" + inputSearch.value + "");
 
     // Exploit JSON and display them in HTML format
     xhr.onload = function(){
@@ -24,7 +24,7 @@ function getRecipe(){
                     <span class="subTitle">Préparation :</span><br>
                     <p class="paraPreparation">${recipe.preparation}</p>
                 </div>
-                `
+                `;
             }
     }
 
@@ -60,7 +60,7 @@ for (let x = 0; x < buttonsCategory.length; x++ ) {
                     <span class="subTitle">Préparation :</span><br>
                     <p class="paraPreparation">${recipe.preparation}</p>
                 </div>
-                `
+                `;
             }
         }
 
@@ -68,3 +68,5 @@ for (let x = 0; x < buttonsCategory.length; x++ ) {
         xhr.send();
     });
 }
+
+

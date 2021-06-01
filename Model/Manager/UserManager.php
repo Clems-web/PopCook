@@ -72,7 +72,7 @@ class UserManager {
         // Else it's an User's update
         else {
             $request = DB::getInstance()->prepare("
-            UPDATE user SET username = :username, password = :password, mail = :mail,role_fk = :role_fk WHERE id = :id
+            UPDATE user SET username = :username, password = :password, mail = :mail, role_fk = :role_fk WHERE id = :id
             ");
 
             $request->bindValue(':username', $user->getUsername());

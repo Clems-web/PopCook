@@ -16,3 +16,4 @@
 
     </div>
 </div>
+<script src="assets/JS/recipeAJAX.js"></script>

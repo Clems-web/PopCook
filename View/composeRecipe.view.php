@@ -18,3 +18,4 @@
 
     </div>
 </div>
+<script src="assets/JS/recipeComposerAJAX.js"></script>
