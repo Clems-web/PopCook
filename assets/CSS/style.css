@@ -238,7 +238,7 @@ textarea {
     padding-top: 1rem;
 }
 
-#recipeContainer {
+#recipeContainer, #containerWhat {
     width: 100%;
     min-height: 52vh;
     height: fit-content;
@@ -246,6 +246,10 @@ textarea {
     border-radius: 15px;
     background-color: blanchedalmond;
     text-align: center;
+}
+
+#containerWhat {
+    margin-top: 4rem;
 }
 
 .buttonCategory {
@@ -316,11 +320,6 @@ textarea {
     background-color: white;
 }
 
-#containerWhat {
-    width: 100%;
-    height: 100vh;
-    margin-top: 4rem;
-}
 #presentationWhat {
     width: 80%;
     margin-left: 10%;

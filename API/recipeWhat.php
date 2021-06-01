@@ -7,10 +7,8 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/Model/Manager/RecipeManager.php';
 header('Content-Type: application/json');
 
 $manager = new RecipeManager();
-
-
-
 $requestType = $_SERVER['REQUEST_METHOD'];
+
 switch($requestType) {
     case 'POST':
         $data = json_decode(file_get_contents('php://input'));
