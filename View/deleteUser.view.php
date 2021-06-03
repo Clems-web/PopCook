@@ -5,7 +5,7 @@
             Vous vous trouvez sur la page de SUPPRESSION de votre compte !
         </p>
         <p>
-            Cette suppression entraînera la perte d'accès à votre compte PopCook et ainsi l'impossibilité de publier de
+            Cette suppression entraînera la perte d'accès à votre compte PopCook ainsi que l'impossibilité de publier de
             nouvelles recettes avec ce même compte.
         </p>
         <p>

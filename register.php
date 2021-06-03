@@ -6,6 +6,8 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/Model/Manager/UserManager.php';
 
 session_start();
 
+$db = new DB();
+
 if (isset($_POST['username'], $_POST['user-pass'], $_POST['user-mail'])) {
 
     if (($_POST['username'] !== 'User deleted')
@@ -14,14 +16,13 @@ if (isset($_POST['username'], $_POST['user-pass'], $_POST['user-mail'])) {
 
             $user = new User(
                 null,
-                $_POST['username'],
-                $_POST['user-pass'],
-                $_POST['user-mail'],
+                $db->cleanInput($_POST['username']),
+                $db->cleanInput($_POST['user-pass']),
+                $db->cleanInput($_POST['user-mail']),
                 2
             );
 
             (new UserManager())->saveUser($user);
-            $_SESSION['user'] = $user;
 
     }
 

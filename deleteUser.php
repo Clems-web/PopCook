@@ -5,11 +5,12 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/Model/Entity/User.php';
 require_once $_SERVER['DOCUMENT_ROOT'] . '/Model/Manager/UserManager.php';
 session_start();
 
+$db = new DB();
 
 if (isset($_SESSION['user'], $_POST['userName'], $_POST['userPass'])) {
 
-    if (($_POST['userName'] === $_SESSION['user']->getUsername()) &&
-        ($_POST['userPass'] === $_SESSION['user']->getPassword())) {
+    if (($db->cleanInput($_POST['userName']) === $_SESSION['user']->getUsername()) &&
+        ($db->cleanInput($_POST['userPass']) === $_SESSION['user']->getPassword())) {
 
         $user = new User(
             $_SESSION['user']->getId(),

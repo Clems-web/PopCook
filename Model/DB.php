@@ -35,6 +35,17 @@ class DB {
     }
 
     /**
+     * Protection against code injection
+     * @param $string
+     * @return string
+     */
+    public function cleanInput($string) {
+        $string = strip_tags($string);
+        $string = addslashes($string);
+        return trim($string);
+    }
+
+    /**
      * Prevent other developers to clone object
      */
     public function __clone(){}
