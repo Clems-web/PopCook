@@ -83,7 +83,7 @@ a {
 }
 .inputBlock input {
     padding-left: 1.5rem;
-    font-size: 2rem;
+    font-size: 2.5rem;
 }
 #inputUsername, #inputUserPass, #inputUserMail {
     border: 2px solid #9E2A4C;

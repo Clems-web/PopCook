@@ -20,10 +20,10 @@ class UserManager {
     }
 
     // User connect
-    public function connectUser(string $username, string $password){
+    public function connectUser(string $mail, string $password){
         $user = [];
-        $request = DB::getInstance()->prepare("SELECT * FROM user WHERE username = :username AND password = :password");
-        $request->bindValue(':username', $username);
+        $request = DB::getInstance()->prepare("SELECT * FROM user WHERE mail = :mail AND password = :password");
+        $request->bindValue(':mail', $mail);
         $request->bindValue(':password', $password);
         $result = $request->execute();
         if($result) {

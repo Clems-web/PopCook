@@ -6,15 +6,15 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/Model/Manager/UserManager.php';
 
 $db = new DB();
 
-if (isset($_POST['username']) && isset($_POST['user-pass']))  {
+if (isset($_POST['user-mail']) && isset($_POST['user-pass']))  {
 
-    if (($_POST['username'] !== 'User deleted') && ($_POST['user-pass'] !== 'password deleted')) {
+    if (($_POST['user-mail'] !== 'mail deleted') && ($_POST['user-pass'] !== 'password deleted')) {
 
         $manager = new UserManager();
-        $userConnected = $manager->connectUser($db->cleanInput($_POST['username']), $db->cleanInput($_POST['user-pass']));
+        $userConnected = $manager->connectUser($db->cleanInput($_POST['user-mail']), $db->cleanInput($_POST['user-pass']));
 
         $_SESSION['user'] = $userConnected;
     }
-
-    header('Location: http://localhost:8000/index.php');
 }
+
+header('Location: http://localhost:8000/index.php');
