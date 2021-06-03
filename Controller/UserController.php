@@ -32,4 +32,11 @@ class UserController {
         $render = new Render('updateUser', 'Modifiations de vos informations');
     }
 
+    /**
+     * Display form used to delete user's informations
+     */
+    public function userDelete() {
+        $render = new Render('deleteUser', 'Suppression de votre compte');
+    }
+
 }

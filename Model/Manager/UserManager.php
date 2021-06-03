@@ -52,7 +52,7 @@ class UserManager {
 
     // If user's Id is null or equal to 0, that's an insert into DB
     public function saveUser(User $user) {
-        if ($user->getId() === 0 ||$user->getId() == null) {
+        if ($user->getId() === 0 || $user->getId() == null) {
             $request = DB::getInstance()->prepare("
         INSERT INTO user(username, password, mail, role_fk) VALUES (:username, :password, :mail,:role_fk)
         ");

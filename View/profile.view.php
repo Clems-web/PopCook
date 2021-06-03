@@ -3,6 +3,7 @@
         <ul>
             <li><a href="?controller=addArticle">Publier une nouvelle recette</a></li>
             <li><a href="?controller=updateUser">Modifier mes informations</a></li>
+            <li><a href="?controller=DeleteUser">Supprimer mon compte</a></li>
         </ul>
     </div>
     <div id="profileContent">

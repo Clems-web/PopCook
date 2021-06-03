@@ -50,7 +50,7 @@ a {
     color: blanchedalmond;
 }
 
-#formContainer, #SubFormContainer {
+#formContainer, #SubFormContainer, #DelFormContainer {
     width: 40%;
     height: 50vh;
     margin-left: 30%;
@@ -63,6 +63,11 @@ a {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+}
+
+#DelFormContainer {
+    margin-top: 4rem;
+    height: 30vh;
 }
 
 #formConnect {
@@ -86,7 +91,7 @@ a {
     padding-left: 1.5rem;
     width: 100%;
 }
-#buttonConnect {
+#buttonConnect, #buttonConfirm {
     width: 100%;
     font-size: 2.5rem;
     margin-top: 1rem;
@@ -238,7 +243,7 @@ textarea {
     padding-top: 1rem;
 }
 
-#recipeContainer, #containerWhat {
+#recipeContainer, #containerWhat, #containerDel {
     width: 100%;
     min-height: 52vh;
     height: fit-content;
@@ -320,7 +325,7 @@ textarea {
     background-color: white;
 }
 
-#presentationWhat {
+#presentationWhat, #presentationDel {
     width: 80%;
     margin-left: 10%;
     height: 20rem;
@@ -332,14 +337,14 @@ textarea {
     box-shadow: inset 0 0 10px 1px rgba(158,42,76,0.32);
 }
 
-#presentationWhat h2 {
+#presentationWhat h2, #presentationDel h2 {
     padding-top: 1rem;
     font-size: 4rem;
     text-align: center;
     color: #9E2A4C;
 }
 
-#presentationWhat p {
+#presentationWhat p, #presentationDel p {
     padding-top: 1rem;
     font-size: 2rem;
     text-align: center;
