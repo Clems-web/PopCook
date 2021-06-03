@@ -2,6 +2,18 @@ let inputSearch = document.getElementById('inputSearch');
 let buttonSearch = document.getElementById('buttonSearch');
 let divRecipeContainer = document.getElementById('recipes');
 
+// Protection against potential attack passing by URL parameters get when using Ajax request
+function removeTags(str) {
+    if ((str===null) || (str==='')) {
+        return false;
+    }
+    else {
+        str = str.toString();
+    }
+    return str.replace( /(<([^>]+)>)/ig, '');
+}
+
+
 // Ajax request for input search in recipe page
 function getRecipe(){
 
@@ -10,7 +22,7 @@ function getRecipe(){
 
     // AJAX request to connect to server and manager.php
     const xhr = new XMLHttpRequest();
-    xhr.open("GET", "./API/recipe.php?search=" + inputSearch.value + "");
+    xhr.open("GET", "./API/recipe.php?search=" + removeTags(inputSearch.value) + "");
 
     // Exploit JSON and display them in HTML format
     xhr.onload = function(){
