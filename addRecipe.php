@@ -11,7 +11,7 @@ $db = new DB();
 if (isset($_SESSION['user'])) {
     if (isset($_POST['title'], $_POST['art'], $_POST['ingredientList'], $_POST['recipePreparation'], $_POST['recipeCategory'])) {
 
-        if ((!empty($_POST['title'])) && (!empty($_POST['art']) && (!empty($_POST['ingredientList']) && (!empty($_POST['recipePreparation']))))) {
+        if ((!empty($_POST['title'])) && (!empty($_POST['art'])) && (!empty($_POST['ingredientList'])) && (!empty($_POST['recipePreparation']))) {
                 $recipe = new Recipe(
                     null,
                     $db->cleanInput($_POST['title']),
