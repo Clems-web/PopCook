@@ -8,7 +8,7 @@
         </p>
         <p>
             Que ce soit un Roman, une bande-dessinée, un manga, un film ou une série, nous connaissons tous des mets
-            plus ou moins raffiné dans ces diverses oeuvres mais quelle frustration de ne trouver malheureusement que
+            plus ou moins raffiné dans ces diverses œuvres mais quelle frustration de ne trouver malheureusement que
             bien peu de recettes pour ces mêmes plats qui attisent notre curiosité et affame nos estomacs.
         </p>
         <p>
