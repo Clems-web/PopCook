@@ -23,6 +23,7 @@ class RecipeManager {
                 $recipe[] = new Recipe(
                     $recipe_data['id'],
                     $recipe_data['title'],
+                    $recipe_data['art'],
                     $recipe_data['ingredient'],
                     $recipe_data['preparation'],
                     $recipe_data['category'],
@@ -53,6 +54,7 @@ class RecipeManager {
                 $recipe = new Recipe(
                     $recipe_data['id'],
                     $recipe_data['title'],
+                    $recipe_data['art'],
                     $recipe_data['ingredient'],
                     $recipe_data['preparation'],
                     $recipe_data['category'],
@@ -73,9 +75,10 @@ class RecipeManager {
         $request = DB::getInstance()->prepare("
             SELECT * FROM recipe 
                 WHERE title LIKE :string 
-                   OR ingredient LIKE :string 
-                   OR preparation LIKE :string 
-                   OR category LIKE :string
+                    OR ingredient LIKE :string 
+                    OR preparation LIKE :string 
+                    OR category LIKE :string
+                    OR art LIKE :string
         ");
         $request->bindValue(':string', '%'.$string.'%');
 
@@ -87,6 +90,7 @@ class RecipeManager {
                     $recipe[] = new Recipe(
                         $recipe_part['id'],
                         $recipe_part['title'],
+                        $recipe_part['art'],
                         $recipe_part['ingredient'],
                         $recipe_part['preparation'],
                         $recipe_part['category'],
@@ -119,6 +123,7 @@ class RecipeManager {
                     $recipe[] = new Recipe(
                         $recipe_data['id'],
                         $recipe_data['title'],
+                        $recipe_data['art'],
                         $recipe_data['ingredient'],
                         $recipe_data['preparation'],
                         $recipe_data['category'],
@@ -137,11 +142,12 @@ class RecipeManager {
     public function saveRecipe(Recipe $recipe) {
         if ($recipe->getId() === 0 || $recipe->getId() == null) {
             $request = DB::getInstance()->prepare("
-                INSERT INTO recipe(title, ingredient, preparation, category,user_fk) 
-                VALUES (:title, :ingredient, :preparation, :category,:user_fk)
+                INSERT INTO recipe(title, art,ingredient, preparation, category, user_fk) 
+                VALUES (:title, :art, :ingredient, :preparation, :category,:user_fk)
         ");
 
             $request->bindValue(':title', $recipe->getTitle());
+            $request->bindValue(':art', $recipe->getArt());
             $request->bindValue(':ingredient', $recipe->getIngredient());
             $request->bindValue(':preparation', $recipe->getPreparation());
             $request->bindValue(':category', $recipe->getCategory());
@@ -157,11 +163,17 @@ class RecipeManager {
         else {
             $request = DB::getInstance()->prepare("
             UPDATE recipe 
-                SET title = :title, ingredient = :ingredient, :preparation = preparation, category = :category, user_fk = :user_fk 
-                    WHERE id = :id
+                SET title = :title,
+                    art = :art, 
+                    ingredient = :ingredient,
+                    preparation = :preparation,
+                    category = :category,
+                    user_fk = :user_fk 
+                        WHERE id = :id
             ");
 
             $request->bindValue(':title', $recipe->getTitle());
+            $request->bindValue(':art', $recipe->getArt());
             $request->bindValue(':ingredient', $recipe->getIngredient());
             $request->bindValue(':preparation', $recipe->getPreparation());
             $request->bindValue(':category', $recipe->getCategory());

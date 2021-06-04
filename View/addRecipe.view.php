@@ -1,7 +1,8 @@
 <form id="formAddRecipe" action="./addRecipe.php" method="POST">
     <div class="inputBlock">
         <input type="text" name="title" placeholder="Titre">
-        <select name="recipeCategory" id="categorySelect" form="formAddRecipe" placeholder="">
+        <input type="text" name="art" placeholder="Oeuvre">
+        <select name="recipeCategory" id="categorySelect" form="formAddRecipe">
             <option value="Film">Film</option>
             <option value="Série">Série</option>
             <option value="Manga/Anime">Manga/Anime</option>

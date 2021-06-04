@@ -13,7 +13,9 @@
         $recipeAuthor = $recipe->getByAuthor($_SESSION['user']);
         foreach ($recipeAuthor as $recipe) {?>
             <div class="recipes">
-                <span class="spanTitle"><?= $recipe->getTitle();?></span>
+                <span class="spanTitle">
+                    <?= $recipe->getTitle().' de '.$recipe->getArt();?>
+                </span>
                 <p>
                     <span class="spanIngredient">Ingrédient :</span>
                     <br>

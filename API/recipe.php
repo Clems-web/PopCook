@@ -14,6 +14,7 @@ if ($result) {
     foreach ($result as $recipe) {
         $tab[] = [
             'title' => $recipe->getTitle(),
+            'art' => $recipe->getArt(),
             'ingredient' => nl2br($recipe->getIngredient()),
             'preparation' => nl2br($recipe->getPreparation()),
         ];

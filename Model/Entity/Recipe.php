@@ -6,6 +6,7 @@ class Recipe {
 
     private ?int $id;
     private ?string $title;
+    private ?string $art;
     private ?string $ingredient;
     private ?string $preparation;
     private ?string $category;
@@ -15,14 +16,16 @@ class Recipe {
      * Recipe constructor.
      * @param int|null $id
      * @param string $title
+     * @param string $art
      * @param string $ingredient
      * @param string $preparation
      * @param string $category
      * @param int|null $user_fk
      */
-    public function __construct(?int $id, string $title ,string $ingredient,string $preparation, string $category, ?int $user_fk) {
+    public function __construct(?int $id, string $title, string $art, string $ingredient,string $preparation, string $category, ?int $user_fk) {
         $this->id = $id;
         $this->title = $title;
+        $this->art = $art;
         $this->ingredient = $ingredient;
         $this->preparation = $preparation;
         $this->category = $category;
@@ -51,13 +54,29 @@ class Recipe {
      */
     public function getTitle(): ?string
     {
-        return $this->title;
+        return str_replace('\\','', $this->title);
     }/**
  * @param string|null $title
  */
     public function setTitle(?string $title): void
     {
         $this->title = $title;
+    }
+
+    /**
+     * @return string|null
+     */
+    public function getArt(): ?string
+    {
+        return $this->art;
+    }
+
+    /**
+     * @param string|null $art
+     */
+    public function setArt(string $art): void
+    {
+        $this->art = $art;
     }
 
     /**

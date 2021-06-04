@@ -4,17 +4,23 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/Model/DB.php';
 require_once $_SERVER['DOCUMENT_ROOT'] . '/Model/Entity/User.php';
 require_once $_SERVER['DOCUMENT_ROOT'] . '/Model/Manager/UserManager.php';
 
-$db = new DB();
-
 if (isset($_POST['user-mail']) && isset($_POST['user-pass']))  {
+
+    $manager = new UserManager();
+    $db = new DB();
 
     if (($_POST['user-mail'] !== 'mail deleted') && ($_POST['user-pass'] !== 'password deleted')) {
 
-        $manager = new UserManager();
+        $pass = $db->cleanInput($_POST['user-pass']);
+        $mail = $db->cleanInput($_POST['user-mail']);
 
-        $userConnected = $manager->connectUser($db->cleanInput($_POST['user-mail']), $db->cleanInput($_POST['user-pass']));
-
-        $_SESSION['user'] = $userConnected;
+        $userConnected = $manager->connectUser($mail, $pass);
+        if ($userConnected !== false) {
+            $_SESSION['user'] = $userConnected;
+        }
+        else {
+            echo "non";
+        }
     }
 }
 

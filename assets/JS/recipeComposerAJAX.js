@@ -20,7 +20,7 @@ buttonsSearchWhat.addEventListener('click', function (e) {
         for (let recipe of result) {
             divRecipeContainer.innerHTML += `
             <div class="recipe">
-                <h2 class="spanTitle">${recipe.title}</h2>
+                <h2 class="spanTitle">${recipe.title} de ${recipe.art}</h2>
                 <span class="subTitle">Ingrédients :</span><br>
                 <p class="paraIngredient">${recipe.ingredient}</p>
                 <span class="subTitle">Préparation :</span><br>

@@ -20,15 +20,15 @@ class UserManager {
     }
 
     public function getUserPass($mail) {
-        $user = "";
-        $request = DB::getInstance()->prepare("SELECT password FROM user WHERE mail = :mail");
+        $user = [];
+        $request = DB::getInstance()->prepare("SELECT * FROM user WHERE mail = :mail");
         $request->bindValue(':mail', $mail);
 
         $result = $request->execute();
         if ($result) {
             $data = $request->fetch();
             if ($data) {
-                $user = $data['password'];
+                $user = new User($data['id'], $data['username'], $data['password'], $data['mail'], $data['role_fk']);
             }
         }
         return $user;
@@ -36,18 +36,21 @@ class UserManager {
 
     // User connect
     public function connectUser(string $mail, string $password){
-        $user = [];
-        $request = DB::getInstance()->prepare("SELECT * FROM user WHERE mail = :mail AND password = :password");
+
+        $request = DB::getInstance()->prepare("SELECT * FROM user WHERE mail = :mail");
         $request->bindValue(':mail', $mail);
-        $request->bindValue(':password', $password);
+
         $result = $request->execute();
         if($result) {
             $user_data = $request->fetch();
             if($user_data) {
-                $user = new User($user_data['id'], $user_data['username'], $user_data['password'], $user_data['mail'], $user_data['role_fk']);
+                if (password_verify($password, $user_data['password'])) {
+                    $user = new User($user_data['id'], $user_data['username'], $user_data['password'], $user_data['mail'], $user_data['role_fk']);
+                    return $user;
+                }
             }
         }
-        return $user;
+        return false;
     }
 
     // Get User by Id
@@ -73,7 +76,7 @@ class UserManager {
         ");
 
             $request->bindValue(':username', $user->getUsername());
-            $request->bindValue(':password', $user->getPassword());
+            $request->bindValue(':password', password_hash($user->getPassword(), PASSWORD_DEFAULT));
             $request->bindValue(':mail', $user->getMail());
             $request->bindValue(':role_fk', $user->getRole());
 
@@ -91,7 +94,7 @@ class UserManager {
             ");
 
             $request->bindValue(':username', $user->getUsername());
-            $request->bindValue(':password', $user->getPassword());
+            $request->bindValue(':password', password_hash($user->getPassword(), PASSWORD_DEFAULT));
             $request->bindValue(':mail', $user->getMail());
             $request->bindValue(':role_fk', $user->getRole());
             $request->bindValue(':id', $user->getId());
