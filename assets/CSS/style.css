@@ -51,13 +51,13 @@ a {
 }
 
 #formContainer, #SubFormContainer, #DelFormContainer {
-    width: 40%;
+    width: 60%;
     height: 50vh;
-    margin-left: 30%;
+    margin-left: 20%;
     margin-top: 10rem;
     border: 2px solid #9E2A4C;
     border-radius: 7.5px;
-    box-shadow : 0 0 18px 1px rgba(158,42,76,0.98);
+    box-shadow: 0 0 18px 1px rgb(158 42 76/98%);
     background-color: white;
     display: flex;
     flex-direction: column;
@@ -75,12 +75,19 @@ a {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    width: 70%;
+}
+
+#formSub {
+    width: 70%;
 }
 
 .inputBlock {
     font-size: 4rem;
     margin-bottom: 2rem;
+    width: 100%;
 }
+
 .inputBlock input {
     padding-left: 1.5rem;
     font-size: 2.5rem;
@@ -390,4 +397,30 @@ textarea {
     font-size: 3rem;
 }
 
+#containerHomepage {
+    width: 100%;
+    height: fit-content;
+    min-height: 70vh;
+    background-color: ghostwhite;
+}
 
+#title {
+    margin-top: 10rem;
+    padding-top: 4rem;
+    text-align: center;
+    font-size: 6rem;
+    color: #FFBA52;
+    text-shadow: #474747 3px 5px 5px;
+}
+
+#content {
+    width: 60%;
+    margin-left: 20%;
+    margin-top: 4rem;
+    font-size: 3rem;
+}
+
+#content p {
+    margin-top: 4rem;
+    letter-spacing: 1px;
+}
