@@ -109,7 +109,13 @@ a {
 }
 
 #buttonSend {
+    width: 50%;
     font-size: 3rem;
+    border: 1px solid #9E2A4C;
+    border-radius: 16px;
+    background-color: #9E2A4C;
+    color: blanchedalmond;
+    box-shadow: rgba(0, 0, 0, 0.35) 0 5px 15px;
 }
 
 #subscriptionDiv {

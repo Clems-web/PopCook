@@ -10,16 +10,20 @@ $db = new DB();
 
 if (isset($_SESSION['user'])) {
     if (isset($_POST['title'], $_POST['art'], $_POST['ingredientList'], $_POST['recipePreparation'], $_POST['recipeCategory'])) {
-        $recipe = new Recipe(
-            null,
-            $db->cleanInput($_POST['title']),
-            $db->cleanInput($_POST['art']),
-            $db->cleanInput($_POST['ingredientList']),
-            $db->cleanInput($_POST['recipePreparation']),
-            $db->cleanInput($_POST['recipeCategory']),
-            $_SESSION['user']->getId()
-        );
-        (new RecipeManager())->saveRecipe($recipe);
+
+        if ((!empty($_POST['title'])) && (!empty($_POST['art']) && (!empty($_POST['ingredientList']) && (!empty($_POST['recipePreparation']))))) {
+                $recipe = new Recipe(
+                    null,
+                    $db->cleanInput($_POST['title']),
+                    $db->cleanInput($_POST['art']),
+                    $db->cleanInput($_POST['ingredientList']),
+                    $db->cleanInput($_POST['recipePreparation']),
+                    $db->cleanInput($_POST['recipeCategory']),
+                    $_SESSION['user']->getId()
+                );
+                (new RecipeManager())->saveRecipe($recipe);
+        }
+
     }
 }
 
