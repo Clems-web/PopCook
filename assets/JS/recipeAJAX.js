@@ -15,7 +15,9 @@ function removeTags(str) {
 
 
 // Ajax request for input search in recipe page
-function getRecipe(){
+function getRecipe(e){
+
+    e.preventDefault();
 
     //Reset container innerHTML
     divRecipeContainer.innerHTML = "";

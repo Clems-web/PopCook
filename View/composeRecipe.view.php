@@ -10,8 +10,10 @@
     </div>
     <div id="searchbarWhat">
         <div id="formWhat">
-            <input type="text" id="inputSearchWhat" placeholder="Ex : Nouilles, porc, oeuf, etc" autocomplete="off">
-            <button type="submit" id="buttonSearchWhat"><i class="fas fa-search"></i></button>
+            <form action="">
+                <input type="text" id="inputSearchWhat" placeholder="Ex : Nouilles, porc, oeuf, etc" autocomplete="off">
+                <button type="submit" id="buttonSearchWhat"><i class="fas fa-search"></i></button>
+            </form>
         </div>
     </div>
     <div id="recipes">

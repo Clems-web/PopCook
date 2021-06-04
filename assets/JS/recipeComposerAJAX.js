@@ -2,7 +2,9 @@ let buttonsSearchWhat = document.getElementById('buttonSearchWhat');
 let inputSearchWhat = document.getElementById('inputSearchWhat');
 let divRecipeContainer = document.getElementById('recipes');
 
-buttonsSearchWhat.addEventListener('click', function () {
+buttonsSearchWhat.addEventListener('click', function (e) {
+
+    e.preventDefault();
 
     //Reset container innerHTML
     divRecipeContainer.innerHTML = "";

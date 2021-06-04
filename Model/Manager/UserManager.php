@@ -19,6 +19,21 @@ class UserManager {
         return $user;
     }
 
+    public function getUserPass($mail) {
+        $user = "";
+        $request = DB::getInstance()->prepare("SELECT password FROM user WHERE mail = :mail");
+        $request->bindValue(':mail', $mail);
+
+        $result = $request->execute();
+        if ($result) {
+            $data = $request->fetch();
+            if ($data) {
+                $user = $data['password'];
+            }
+        }
+        return $user;
+    }
+
     // User connect
     public function connectUser(string $mail, string $password){
         $user = [];

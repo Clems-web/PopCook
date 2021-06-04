@@ -11,6 +11,7 @@ if (isset($_POST['user-mail']) && isset($_POST['user-pass']))  {
     if (($_POST['user-mail'] !== 'mail deleted') && ($_POST['user-pass'] !== 'password deleted')) {
 
         $manager = new UserManager();
+
         $userConnected = $manager->connectUser($db->cleanInput($_POST['user-mail']), $db->cleanInput($_POST['user-pass']));
 
         $_SESSION['user'] = $userConnected;
