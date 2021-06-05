@@ -68,7 +68,7 @@ class Recipe {
      */
     public function getArt(): ?string
     {
-        return $this->art;
+        return str_replace('\\','', $this->art);
     }
 
     /**
@@ -84,7 +84,7 @@ class Recipe {
      */
     public function getIngredient(): ?string
     {
-        return $this->ingredient;
+        return str_replace('\\','', $this->ingredient);
     }
 
     /**
@@ -100,7 +100,7 @@ class Recipe {
      */
     public function getPreparation(): ?string
     {
-        return $this->preparation;
+        return str_replace('\\','', $this->preparation);
     }
 
     /**
@@ -116,7 +116,7 @@ class Recipe {
      */
     public function getCategory(): ?string
     {
-        return $this->category;
+        return str_replace('\\','', $this->category);
     }
 
     /**
