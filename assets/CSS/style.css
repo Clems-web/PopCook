@@ -430,3 +430,89 @@ textarea {
     margin-top: 4rem;
     letter-spacing: 1px;
 }
+
+@media screen and (max-width: 660px) {
+
+    #navbar, #footer {
+        height: 20rem;
+    }
+
+    #navbar ul, #footer ul {
+        flex-direction: column;
+        font-size: 4rem;
+    }
+
+    .buttonCategory {
+        font-size: 1.5rem;
+    }
+
+    #presentationWhat, #presentationDel {
+        height: 28rem;
+    }
+
+    .inputBlock input {
+        font-size: 1.8rem;
+    }
+
+    #profileSettings ul li {
+        height: 8rem;
+    }
+}
+
+@media screen and (max-width: 351px) {
+    #category ul {
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        margin-left: 1rem;
+    }
+
+    #inputSearch {
+        width: 88%;
+        font-size: 1.8rem;
+    }
+
+    #buttonSearch {
+        width: 12%;
+    }
+
+    #presentationWhat, #presentationDel {
+        height: 42rem;
+    }
+
+    #searchbarWhat {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    #formWhat form #inputSearchWhat {
+        width: 88%;
+    }
+
+    #formWhat form #buttonSearchWhat {
+        width: 12%;
+    }
+
+    #profileSettings {
+        width: 40%;
+    }
+    #profileContent {
+        width: 60%;
+    }
+
+    #profileContent h2, #profileContent {
+        margin-left: 1rem;
+    }
+
+    #inputUsername, #inputUserPass, #inputUserMail {
+        padding-left: 0.5rem;
+    }
+
+    #formSub {
+        width: 90%;
+    }
+
+    .inputBlock input {
+        font-size: 1.4rem;
+    }
+}
