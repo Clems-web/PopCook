@@ -7,7 +7,10 @@
             <input type="email" id="inputUserMail" name="user-mail" placeholder="Adresse Mail" required>
         </div>
         <div class="inputBlock">
-            <input type="password" id="inputUserPass" name="user-pass" placeholder="Password" required>
+            <input type="password" id="inputUserPass" name="user-pass" placeholder="Mot de passe" required>
+        </div>
+        <div class="inputBlock">
+            <input type="password" id="inputUserPass" name="user-pass-two" placeholder="Confirmer le mot de passe" required>
         </div>
         <button id="buttonConnect" type="submit">S'inscrire</button>
     </form>

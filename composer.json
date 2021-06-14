@@ -1,0 +1,17 @@
+{
+  "name": "vendor_name/PopCook",
+  "description": "description",
+  "minimum-stability": "stable",
+  "license": "proprietary",
+  "authors": [
+    {
+      "name": "cleme",
+      "email": "email@example.com"
+    }
+  ],
+  "require": {
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^9.5"
+  }
+}

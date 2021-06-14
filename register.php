@@ -8,11 +8,12 @@ session_start();
 
 $db = new DB();
 
-if (isset($_POST['username'], $_POST['user-pass'], $_POST['user-mail'])) {
+if (isset($_POST['username'], $_POST['user-pass'], $_POST['user-pass-two'], $_POST['user-mail'])) {
 
     if (($_POST['username'] !== 'User deleted')
         && ($_POST['user-pass'] !== 'password deleted')
-        && ($_POST['user-mail'] !== 'mail deleted')) {
+        && ($_POST['user-mail'] !== 'mail deleted')
+        && ($_POST['user-pass'] === $_POST['user-pass-two'])) {
 
             $user = new User(
                 null,

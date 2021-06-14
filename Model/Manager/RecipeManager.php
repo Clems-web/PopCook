@@ -136,13 +136,13 @@ class RecipeManager {
     }
 
     /**
-     * Insert User in DB or update him/her
+     * Insert Recipe in DB or update him/her
      * @param Recipe $recipe
      */
     public function saveRecipe(Recipe $recipe) {
         if ($recipe->getId() === 0 || $recipe->getId() == null) {
             $request = DB::getInstance()->prepare("
-                INSERT INTO recipe(title, art,ingredient, preparation, category, user_fk) 
+                INSERT INTO recipe(title, art, ingredient, preparation, category, user_fk) 
                 VALUES (:title, :art, :ingredient, :preparation, :category,:user_fk)
         ");
 

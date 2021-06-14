@@ -2,6 +2,7 @@
 
 
 class DB {
+
     private static $dbInstance = null;
 
     /**
@@ -24,7 +25,7 @@ class DB {
     }
 
     /**
-     * Return only one PDO  instance through the whole project.
+     * Return only one PDO instance through the whole project.
      * @return PDO|null (instance) PDO|null
      */
     public static function getInstance(): ?PDO {
@@ -49,4 +50,5 @@ class DB {
      * Prevent other developers to clone object
      */
     public function __clone(){}
+
 }

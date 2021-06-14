@@ -29,7 +29,7 @@ class UserController {
      * Display form used to modify user's informations
      */
     public function userUpdate() {
-        $render = new Render('updateUser', 'Modifiations de vos informations');
+        $render = new Render('updateUser', 'Modifications de vos informations');
     }
 
     /**

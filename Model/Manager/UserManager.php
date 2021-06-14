@@ -1,8 +1,5 @@
 <?php
 
-require_once $_SERVER['DOCUMENT_ROOT'] . '/Model/DB.php';
-require_once $_SERVER['DOCUMENT_ROOT'] . '/Model/Entity/User.php';
-
 class UserManager {
 
     // Get all User
@@ -45,7 +42,13 @@ class UserManager {
             $user_data = $request->fetch();
             if($user_data) {
                 if (password_verify($password, $user_data['password'])) {
-                    $user = new User($user_data['id'], $user_data['username'], $user_data['password'], $user_data['mail'], $user_data['role_fk']);
+                    $user = new User(
+                        $user_data['id'],
+                        $user_data['username'],
+                        $password,
+                        $user_data['mail'],
+                        $user_data['role_fk']
+                    );
                     return $user;
                 }
             }
@@ -69,7 +72,7 @@ class UserManager {
     }
 
     // If user's Id is null or equal to 0, that's an insert into DB
-    public function saveUser(User $user) {
+    public function saveUser(User $user) : string {
         if ($user->getId() === 0 || $user->getId() == null) {
             $request = DB::getInstance()->prepare("
         INSERT INTO user(username, password, mail, role_fk) VALUES (:username, :password, :mail,:role_fk)
@@ -84,6 +87,7 @@ class UserManager {
 
             if ($request) {
                 echo "User saved in DB";
+                return 'ok';
             }
         }
 
@@ -103,6 +107,7 @@ class UserManager {
 
             if ($request) {
                 echo "User updated";
+                return 'ok';
             }
         }
 

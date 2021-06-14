@@ -18,9 +18,6 @@ if (isset($_POST['user-mail']) && isset($_POST['user-pass']))  {
         if ($userConnected !== false) {
             $_SESSION['user'] = $userConnected;
         }
-        else {
-            echo "non";
-        }
     }
 }
 

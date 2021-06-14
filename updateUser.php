@@ -7,7 +7,13 @@ session_start();
 
 $db = new DB();
 
-if (isset($_SESSION['user'], $_POST['new-username'], $_POST['old-user-mail'], $_POST['new-user-mail'], $_POST['old-user-pass'], $_POST['new-user-pass'])) {
+if (isset($_SESSION['user'],
+    $_POST['new-username'],
+    $_POST['old-user-mail'],
+    $_POST['new-user-mail'],
+    $_POST['old-user-pass'],
+    $_POST['new-user-pass'])
+    ) {
 
     if (($_POST['old-user-mail'] === $_SESSION['user']->getMail()) &&
         ($_POST['old-user-pass'] === $_SESSION['user']->getPassword())) {

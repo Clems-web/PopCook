@@ -15,9 +15,8 @@ switch($requestType) {
         // Decoding our array changed into JSON from recipeComposerAjax.js
         $data = json_decode(file_get_contents('php://input'));
         $recipes = $manager->getBySearch($data[0]);
+
         $result = [];
-
-
         foreach ($recipes as $recipe) {
             $tab = explode('- ', $recipe->getIngredient());
             $array = [];
