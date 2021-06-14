@@ -30,9 +30,9 @@ if (isset($_SESSION['user'],
 
         $_SESSION['user'] = $user;
 
-        header('Location: http://localhost:8000/?controller=profile');
+        header('Location: ../index.php?controller=profile');
     }
     else {
-        header('Location: http://localhost:8000/?controller=updateUser');
+        header('Location: ../index.php?controller=updateUser');
     }
 }

@@ -27,5 +27,5 @@ if (isset($_SESSION['user'])) {
     }
 }
 
-header('Location: http://localhost:8000/index.php');
+header('Location: ../index.php');
 

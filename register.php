@@ -27,5 +27,5 @@ if (isset($_POST['username'], $_POST['user-pass'], $_POST['user-pass-two'], $_PO
 
     }
 
-    header('Location: http://localhost:8000/index.php');
+    header('Location: ../index.php');
 }

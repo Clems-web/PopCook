@@ -28,6 +28,6 @@ if (isset($_SESSION['user'], $_POST['userName'], $_POST['userPass'])) {
         setcookie(session_name(), '', time() - 42000, $params['path'], $params['domain'], $params['secure'],$params['HttpOnly']);
         session_destroy();
 
-        header('Location: http://localhost:8000/index.php');
+        header('Location: ../index.php');
     }
 }

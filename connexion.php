@@ -21,4 +21,4 @@ if (isset($_POST['user-mail']) && isset($_POST['user-pass']))  {
     }
 }
 
-header('Location: http://localhost:8000/index.php');
+header('Location: ../index.php');
